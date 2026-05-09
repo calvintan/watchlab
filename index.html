@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Facer MVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Exo+2:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="brand__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#000"
+                d="M20.571 3.429h-3.428v3.428h3.428zM20.571 6.857v10.286H24V6.857zM20.571 17.143h-3.428v3.428h3.428zM3.429 10.286V6.857H0v10.286h3.429v-6.857M6.857 17.143H3.43v3.428h3.428zM13.714 3.429h3.429V0H6.857v3.429h6.857M13.714 6.857h-3.428v6.857h6.857v-3.428h-3.429zM10.286 20.571H6.857V24h10.286v-3.429h-6.857M6.857 3.429H3.43v3.428h3.428z"
+              />
+            </svg>
+          </span>
+          <span class="brand__label">WATCH FACER</span>
+        </div>
+
+        <button
+          class="customise-button"
+          id="customise-button"
+          type="button"
+          aria-expanded="true"
+          aria-controls="control-panel"
+        >
+          <span class="customise-button__icon" aria-hidden="true"></span>
+          <span>CUSTOMISE</span>
+        </button>
+      </header>
+
+      <main class="app-layout">
+        <section class="preview-area" aria-label="Clock preview area">
+          <div class="preview-stage">
+            <div class="clock-frame">
+              <div class="clock-face" aria-label="Analog clock face preview">
+                <div class="clock-face__surface"></div>
+                <div class="clock-markers" aria-hidden="true"></div>
+                <div class="clock-numbers" aria-hidden="true"></div>
+
+                <div class="clock-hands" aria-hidden="true">
+                  <div class="clock-hand clock-hand--hour">
+                    <div class="clock-hand__lume clock-hand__lume--hour"></div>
+                  </div>
+                  <div class="clock-hand clock-hand--minute">
+                    <div class="clock-hand__lume clock-hand__lume--minute"></div>
+                  </div>
+                  <div class="clock-hand clock-hand--second"></div>
+                </div>
+
+                <div class="clock-center" aria-hidden="true">
+                  <span class="clock-center__cap"></span>
+                  <span class="clock-center__pin"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="control-panel" id="control-panel" aria-label="Customisation panel">
+          <nav class="panel-tabs" aria-label="Customisation sections">
+            <button class="panel-tab panel-tab--active" data-tab="hands" type="button">Hands</button>
+            <button class="panel-tab" data-tab="indices" type="button">Indices</button>
+            <button class="panel-tab" data-tab="numbers" type="button">Numbers</button>
+            <button class="panel-tab" data-tab="base" type="button">Base</button>
+          </nav>
+
+          <section class="tab-panel tab-panel--active" data-panel="hands" aria-label="Hands settings">
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" data-accordion-toggle type="button" aria-expanded="true">
+                <span>Hour hand</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="hour-visible">Visibility</label>
+                  <label class="switch" for="hour-visible">
+                    <input id="hour-visible" data-hand="hour" data-control="visible" type="checkbox" checked />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-color">Colour</label>
+                  <input
+                    id="hour-color"
+                    class="color-input"
+                    data-hand="hour"
+                    data-control="color"
+                    type="color"
+                    value="#1f1f1f"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-length">Length</label>
+                  <div class="range-control">
+                    <input
+                      id="hour-length"
+                      class="range-input"
+                      data-hand="hour"
+                      data-control="length"
+                      type="range"
+                      min="0.25"
+                      max="0.55"
+                      step="0.01"
+                      value="0.45"
+                    />
+                    <output class="control-value" data-output="hour-length" for="hour-length">0.45</output>
+                  </div>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-lume-visible">Show lume</label>
+                  <label class="switch" for="hour-lume-visible">
+                    <input id="hour-lume-visible" data-hand="hour" data-control="lumeVisible" type="checkbox" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-lume-color">Lume colour</label>
+                  <input
+                    id="hour-lume-color"
+                    class="color-input"
+                    data-hand="hour"
+                    data-control="lumeColor"
+                    type="color"
+                    value="#f5f5f5"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-pointed-tip">Pointed tip</label>
+                  <label class="switch" for="hour-pointed-tip">
+                    <input id="hour-pointed-tip" data-hand="hour" data-control="pointedTip" type="checkbox" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" data-accordion-toggle type="button" aria-expanded="true">
+                <span>Minute hand</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="minute-visible">Visibility</label>
+                  <label class="switch" for="minute-visible">
+                    <input
+                      id="minute-visible"
+                      data-hand="minute"
+                      data-control="visible"
+                      type="checkbox"
+                      checked
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-color">Colour</label>
+                  <input
+                    id="minute-color"
+                    class="color-input"
+                    data-hand="minute"
+                    data-control="color"
+                    type="color"
+                    value="#2c2c2c"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-length">Length</label>
+                  <div class="range-control">
+                    <input
+                      id="minute-length"
+                      class="range-input"
+                      data-hand="minute"
+                      data-control="length"
+                      type="range"
+                      min="0.35"
+                      max="0.75"
+                      step="0.01"
+                      value="0.65"
+                    />
+                    <output class="control-value" data-output="minute-length" for="minute-length">0.65</output>
+                  </div>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-lume-visible">Show lume</label>
+                  <label class="switch" for="minute-lume-visible">
+                    <input
+                      id="minute-lume-visible"
+                      data-hand="minute"
+                      data-control="lumeVisible"
+                      type="checkbox"
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-lume-color">Lume colour</label>
+                  <input
+                    id="minute-lume-color"
+                    class="color-input"
+                    data-hand="minute"
+                    data-control="lumeColor"
+                    type="color"
+                    value="#f5f5f5"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-pointed-tip">Pointed tip</label>
+                  <label class="switch" for="minute-pointed-tip">
+                    <input
+                      id="minute-pointed-tip"
+                      data-hand="minute"
+                      data-control="pointedTip"
+                      type="checkbox"
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" data-accordion-toggle type="button" aria-expanded="true">
+                <span>Second hand</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="second-visible">Visibility</label>
+                  <label class="switch" for="second-visible">
+                    <input
+                      id="second-visible"
+                      data-hand="second"
+                      data-control="visible"
+                      type="checkbox"
+                      checked
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="second-color">Colour</label>
+                  <input
+                    id="second-color"
+                    class="color-input"
+                    data-hand="second"
+                    data-control="color"
+                    type="color"
+                    value="#d4151e"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="second-length">Length</label>
+                  <div class="range-control">
+                    <input
+                      id="second-length"
+                      class="range-input"
+                      data-hand="second"
+                      data-control="length"
+                      type="range"
+                      min="0.35"
+                      max="0.8"
+                      step="0.01"
+                      value="0.7"
+                    />
+                    <output class="control-value" data-output="second-length" for="second-length">0.70</output>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="tab-panel" data-panel="indices" aria-label="Indices settings" hidden>
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" type="button" aria-expanded="true">
+                <span>Hour markers</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="hour-markers-visible">Visibility</label>
+                  <label class="switch" for="hour-markers-visible">
+                    <input
+                      id="hour-markers-visible"
+                      data-section="hourMarkers"
+                      data-control="visible"
+                      type="checkbox"
+                      checked
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-markers-color">Colour</label>
+                  <input
+                    id="hour-markers-color"
+                    class="color-input"
+                    data-section="hourMarkers"
+                    data-control="color"
+                    type="color"
+                    value="#2d2d2d"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-markers-cardinal">Cardinal position</label>
+                  <label class="switch" for="hour-markers-cardinal">
+                    <input
+                      id="hour-markers-cardinal"
+                      data-section="hourMarkers"
+                      data-control="cardinalOnly"
+                      type="checkbox"
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="hour-markers-dot">Display as dot</label>
+                  <label class="switch" for="hour-markers-dot">
+                    <input
+                      id="hour-markers-dot"
+                      data-section="hourMarkers"
+                      data-control="displayAsDot"
+                      type="checkbox"
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" type="button" aria-expanded="true">
+                <span>Minute markers</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="minute-markers-visible">Visibility</label>
+                  <label class="switch" for="minute-markers-visible">
+                    <input
+                      id="minute-markers-visible"
+                      data-section="minuteMarkers"
+                      data-control="visible"
+                      type="checkbox"
+                      checked
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-markers-color">Colour</label>
+                  <input
+                    id="minute-markers-color"
+                    class="color-input"
+                    data-section="minuteMarkers"
+                    data-control="color"
+                    type="color"
+                    value="#2d2d2d"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="minute-markers-dot">Display as dot</label>
+                  <label class="switch" for="minute-markers-dot">
+                    <input
+                      id="minute-markers-dot"
+                      data-section="minuteMarkers"
+                      data-control="displayAsDot"
+                      type="checkbox"
+                    />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="tab-panel" data-panel="numbers" aria-label="Numbers settings" hidden>
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" type="button" aria-expanded="true">
+                <span>Numbers</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="numbers-visible">Visibility</label>
+                  <label class="switch" for="numbers-visible">
+                    <input id="numbers-visible" data-section="numbers" data-control="visible" type="checkbox" checked />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="numbers-color">Colour</label>
+                  <input
+                    id="numbers-color"
+                    class="color-input"
+                    data-section="numbers"
+                    data-control="color"
+                    type="color"
+                    value="#202020"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="numbers-font">Font</label>
+                  <select id="numbers-font" class="font-select" data-section="numbers" data-control="fontFamily">
+                    <option value="Inter, sans-serif">Inter</option>
+                    <option value="Poppins, sans-serif">Poppins</option>
+                    <option value="Montserrat, sans-serif">Montserrat</option>
+                    <option value='"Space Grotesk", sans-serif'>Space Grotesk</option>
+                    <option value='"DM Sans", sans-serif'>DM Sans</option>
+                    <option value='"Playfair Display", serif'>Playfair Display</option>
+                    <option value='"Cormorant Garamond", serif'>Cormorant Garamond</option>
+                    <option value='"Libre Baskerville", serif'>Libre Baskerville</option>
+                    <option value='"Helvetica Neue", Helvetica, Arial, sans-serif'>Helvetica</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value='"Times New Roman", serif'>Times New Roman</option>
+                    <option value='"JetBrains Mono", "Courier New", monospace'>JetBrains Mono</option>
+                    <option value='"IBM Plex Mono", monospace'>IBM Plex Mono</option>
+                    <option value="Orbitron, sans-serif">Orbitron</option>
+                    <option value='"Exo 2", sans-serif'>Exo 2</option>
+                    <option value="Rajdhani, sans-serif">Rajdhani</option>
+                    <option value='"Bebas Neue", sans-serif'>Bebas Neue</option>
+                    <option value="Oswald, sans-serif">Oswald</option>
+                    <option value='"Courier New", monospace'>Courier New</option>
+                  </select>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="numbers-size">Size</label>
+                  <div class="range-control">
+                    <input
+                      id="numbers-size"
+                      class="range-input"
+                      data-section="numbers"
+                      data-control="fontSize"
+                      type="range"
+                      min="16"
+                      max="48"
+                      step="1"
+                      value="24"
+                    />
+                    <output class="control-value" data-output="numbers-fontSize" for="numbers-size">24</output>
+                  </div>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="numbers-weight">Weight</label>
+                  <div class="range-control">
+                    <input
+                      id="numbers-weight"
+                      class="range-input"
+                      data-section="numbers"
+                      data-control="fontWeight"
+                      type="range"
+                      min="100"
+                      max="900"
+                      step="100"
+                      value="400"
+                    />
+                    <output class="control-value" data-output="numbers-fontWeight" for="numbers-weight">400</output>
+                  </div>
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="numbers-cardinal">Cardinal position</label>
+                  <label class="switch" for="numbers-cardinal">
+                    <input id="numbers-cardinal" data-section="numbers" data-control="cardinalOnly" type="checkbox" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="tab-panel" data-panel="base" aria-label="Base settings" hidden>
+            <article class="accordion-section accordion-section--open">
+              <button class="accordion-toggle" type="button" aria-expanded="true">
+                <span>Base</span>
+                <span class="accordion-toggle__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="accordion-content">
+                <div class="control-row">
+                  <label class="control-label" for="base-clock-face-color">Clock face</label>
+                  <input
+                    id="base-clock-face-color"
+                    class="color-input"
+                    data-section="base"
+                    data-control="clockFaceBackgroundColor"
+                    type="color"
+                    value="#ececec"
+                  />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="base-page-color">Page background</label>
+                  <input
+                    id="base-page-color"
+                    class="color-input"
+                    data-section="base"
+                    data-control="pageBackgroundColor"
+                    type="color"
+                    value="#e8e9e9"
+                  />
+                </div>
+              </div>
+            </article>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
