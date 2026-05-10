@@ -13,16 +13,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app-shell">
+    <div class="app-shell panel-collapsed">
       <header class="top-bar">
         <div class="brand">
           <span class="brand__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path
-                fill="#000"
-                d="M20.571 3.429h-3.428v3.428h3.428zM20.571 6.857v10.286H24V6.857zM20.571 17.143h-3.428v3.428h3.428zM3.429 10.286V6.857H0v10.286h3.429v-6.857M6.857 17.143H3.43v3.428h3.428zM13.714 3.429h3.429V0H6.857v3.429h6.857M13.714 6.857h-3.428v6.857h6.857v-3.428h-3.429zM10.286 20.571H6.857V24h10.286v-3.429h-6.857M6.857 3.429H3.43v3.428h3.428z"
-              />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#2b2b2b" d="M19.313 12a7.3 7.3 0 0 0-3.05-5.935l-.597-3.3a1.31 1.31 0 0 0-1.292-1.078H9.626a1.31 1.31 0 0 0-1.292 1.079l-.597 3.299a7.3 7.3 0 0 0 0 11.87l.597 3.3a1.31 1.31 0 0 0 1.292 1.078h4.748a1.31 1.31 0 0 0 1.292-1.079l.597-3.299A7.3 7.3 0 0 0 19.313 12M9.442 2.966a.19.19 0 0 1 .187-.154h4.748a.19.19 0 0 1 .187.154l.428 2.362a7.28 7.28 0 0 0-5.972 0zm5.116 18.068a.19.19 0 0 1-.187.154H9.626a.19.19 0 0 1-.187-.154l-.428-2.362a7.28 7.28 0 0 0 5.972 0zM12 18.188A6.187 6.187 0 1 1 18.188 12 6.195 6.195 0 0 1 12 18.188M16.313 12a.56.56 0 0 1-.563.563H12a.56.56 0 0 1-.562-.563V8.25a.563.563 0 0 1 1.124 0v3.188h3.188a.56.56 0 0 1 .563.562"/></svg>
           </span>
           <span class="brand__label">WATCH FACER</span>
         </div>
@@ -31,7 +26,7 @@
           class="customise-button"
           id="customise-button"
           type="button"
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls="control-panel"
         >
           <span class="customise-button__icon" aria-hidden="true"></span>
@@ -67,7 +62,33 @@
           </div>
         </section>
 
-        <aside class="control-panel" id="control-panel" aria-label="Customisation panel">
+        <section
+          class="style-library"
+          id="style-library"
+          aria-label="Style library"
+          aria-hidden="true"
+        >
+          <div class="style-library__tray">
+            <button class="style-library__arrow" id="style-library-prev" type="button" aria-label="Previous styles">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#000" d="M13.163 15.587a.94.94 0 1 1-1.328 1.328l-6.25-6.25a.94.94 0 0 1 0-1.328l6.25-6.25a.94.94 0 1 1 1.328 1.328L7.578 10z"/></svg>
+            </button>
+            <div class="style-library__slots" id="style-library-slots" role="list" aria-label="Style options"></div>
+            <button class="style-library__arrow" id="style-library-next" type="button" aria-label="Next styles">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#000" d="m14.413 10.663-6.25 6.25a.939.939 0 1 1-1.328-1.328L12.422 10 6.837 4.413a.94.94 0 0 1 1.328-1.328l6.25 6.25a.94.94 0 0 1-.002 1.328"/></svg>
+            </button>
+          </div>
+          <button
+            class="style-library__toggle"
+            id="style-library-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="style-library"
+          >
+            <span data-style-library-label>STYLE LIBRARY</span>
+          </button>
+        </section>
+
+        <aside class="control-panel" id="control-panel" aria-label="Customisation panel" aria-hidden="true">
           <nav class="panel-tabs" aria-label="Customisation sections">
             <button class="panel-tab panel-tab--active" data-tab="hands" type="button">Hands</button>
             <button class="panel-tab" data-tab="indices" type="button">Indices</button>
@@ -425,7 +446,7 @@
                     <option value="Arial, sans-serif">Arial</option>
                     <option value="Georgia, serif">Georgia</option>
                     <option value='"Times New Roman", serif'>Times New Roman</option>
-                    <option value='"JetBrains Mono", "Courier New", monospace'>JetBrains Mono</option>
+                    <option value='"JetBrains Mono", monospace'>JetBrains Mono</option>
                     <option value='"IBM Plex Mono", monospace'>IBM Plex Mono</option>
                     <option value="Orbitron, sans-serif">Orbitron</option>
                     <option value='"Exo 2", sans-serif'>Exo 2</option>
@@ -499,6 +520,25 @@
                   />
                 </div>
                 <div class="control-row">
+                  <label class="control-label" for="base-clock-face-alpha">Clock face alpha</label>
+                  <div class="range-control">
+                    <input
+                      id="base-clock-face-alpha"
+                      class="range-input"
+                      data-section="base"
+                      data-control="clockFaceBackgroundAlpha"
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.05"
+                      value="1"
+                    />
+                    <output class="control-value" data-output="base-clockFaceBackgroundAlpha" for="base-clock-face-alpha">
+                      1.00
+                    </output>
+                  </div>
+                </div>
+                <div class="control-row">
                   <label class="control-label" for="base-page-color">Page background</label>
                   <input
                     id="base-page-color"
@@ -508,6 +548,25 @@
                     type="color"
                     value="#e8e9e9"
                   />
+                </div>
+                <div class="control-row">
+                  <label class="control-label" for="base-pattern">Pattern</label>
+                  <select id="base-pattern" class="font-select" data-section="base" data-control="pageBackgroundPattern">
+                    <option value="">None</option>
+                    <option value="assets/patterns/cubes.png">Cubes</option>
+                    <option value="assets/patterns/decalees.png">Decalees</option>
+                    <option value="assets/patterns/diamond.png">Diamond</option>
+                    <option value="assets/patterns/diamond-2.png">Diamond 2</option>
+                    <option value="assets/patterns/embossed.png">Embossed</option>
+                    <option value="assets/patterns/leather.png">Leather</option>
+                    <option value="assets/patterns/leather-2.png">Leather 2</option>
+                    <option value="assets/patterns/metal.png">Metal</option>
+                    <option value="assets/patterns/metal-2.png">Metal 2</option>
+                    <option value="assets/patterns/noise.png">Noise</option>
+                    <option value="assets/patterns/pixel.png">Pixel</option>
+                    <option value="assets/patterns/pyramid.png">Pyramid</option>
+                    <option value="assets/patterns/skulls.png">Skulls</option>
+                  </select>
                 </div>
               </div>
             </article>
