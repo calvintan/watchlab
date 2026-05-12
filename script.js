@@ -11,8 +11,8 @@ const stylePresets = [
     swatch: { accent: "#111111", ring: "#f5f5f0", border: "#222222", glow: "#ecece5" },
     state: {
       hands: {
-        hour: { visible: true, color: "#0f0f10", length: 0.45, lumeVisible: false, lumeColor: "#f5f5f5", pointedTip: false },
-        minute: { visible: true, color: "#17181a", length: 0.65, lumeVisible: false, lumeColor: "#f5f5f5", pointedTip: false },
+        hour: { visible: true, color: "#0f0f10", length: 0.45, lumeVisible: false, lumeColor: "#f5f5f5", shape: "rounded" },
+        minute: { visible: true, color: "#17181a", length: 0.65, lumeVisible: false, lumeColor: "#f5f5f5", shape: "rounded" },
         second: { visible: true, color: "#d4151e", length: 0.7 }
       },
       indices: {
@@ -41,8 +41,8 @@ const stylePresets = [
     swatch: { accent: "#09a36d", ring: "#ffffff", border: "#202020", glow: "#e3efe8" },
     state: {
       hands: {
-        hour: { visible: true, color: "#14bf84", length: 0.44, lumeVisible: true, lumeColor: "#dff6ea", pointedTip: false },
-        minute: { visible: true, color: "#14bf84", length: 0.64, lumeVisible: true, lumeColor: "#dff6ea", pointedTip: false },
+        hour: { visible: true, color: "#14bf84", length: 0.44, lumeVisible: true, lumeColor: "#dff6ea", shape: "rounded" },
+        minute: { visible: true, color: "#14bf84", length: 0.64, lumeVisible: true, lumeColor: "#dff6ea", shape: "rounded" },
         second: { visible: true, color: "#e11d2e", length: 0.7 }
       },
       indices: {
@@ -71,8 +71,8 @@ const stylePresets = [
     swatch: { accent: "#ff5b58", ring: "#681715", border: "#320b0a", glow: "#ffe3e1" },
     state: {
       hands: {
-        hour: { visible: true, color: "#151515", length: 0.47, lumeVisible: true, lumeColor: "#ffd9d6", pointedTip: true },
-        minute: { visible: true, color: "#191919", length: 0.68, lumeVisible: true, lumeColor: "#ffd9d6", pointedTip: true },
+        hour: { visible: true, color: "#151515", length: 0.47, lumeVisible: true, lumeColor: "#ffd9d6", shape: "pointed" },
+        minute: { visible: true, color: "#191919", length: 0.68, lumeVisible: true, lumeColor: "#ffd9d6", shape: "pointed" },
         second: { visible: true, color: "#ff3b30", length: 0.74 }
       },
       indices: {
@@ -101,8 +101,8 @@ const stylePresets = [
     swatch: { accent: "#56c1da", ring: "#0e5b79", border: "#16334a", glow: "#def2f7" },
     state: {
       hands: {
-        hour: { visible: true, color: "#12344f", length: 0.43, lumeVisible: true, lumeColor: "#bdefff", pointedTip: false },
-        minute: { visible: true, color: "#0f4566", length: 0.67, lumeVisible: true, lumeColor: "#bdefff", pointedTip: false },
+        hour: { visible: true, color: "#12344f", length: 0.43, lumeVisible: true, lumeColor: "#bdefff", shape: "rounded" },
+        minute: { visible: true, color: "#0f4566", length: 0.67, lumeVisible: true, lumeColor: "#bdefff", shape: "rounded" },
         second: { visible: true, color: "#58c3d5", length: 0.72 }
       },
       indices: {
@@ -131,8 +131,8 @@ const stylePresets = [
     swatch: { accent: "#d3b47b", ring: "#f6efdd", border: "#7d5d36", glow: "#f6efdf" },
     state: {
       hands: {
-        hour: { visible: true, color: "#5f4828", length: 0.44, lumeVisible: true, lumeColor: "#efe5bf", pointedTip: true },
-        minute: { visible: true, color: "#6b5030", length: 0.65, lumeVisible: true, lumeColor: "#efe5bf", pointedTip: true },
+        hour: { visible: true, color: "#5f4828", length: 0.44, lumeVisible: true, lumeColor: "#efe5bf", shape: "pointed" },
+        minute: { visible: true, color: "#6b5030", length: 0.65, lumeVisible: true, lumeColor: "#efe5bf", shape: "pointed" },
         second: { visible: true, color: "#b55a34", length: 0.68 }
       },
       indices: {
@@ -161,8 +161,8 @@ const stylePresets = [
     swatch: { accent: "#8ea0ff", ring: "#23314d", border: "#0d1220", glow: "#dfe6ff" },
     state: {
       hands: {
-        hour: { visible: true, color: "#f1f5ff", length: 0.45, lumeVisible: false, lumeColor: "#dce8ff", pointedTip: true },
-        minute: { visible: true, color: "#d7e0ff", length: 0.66, lumeVisible: false, lumeColor: "#dce8ff", pointedTip: true },
+        hour: { visible: true, color: "#f1f5ff", length: 0.45, lumeVisible: false, lumeColor: "#dce8ff", shape: "pointed" },
+        minute: { visible: true, color: "#d7e0ff", length: 0.66, lumeVisible: false, lumeColor: "#dce8ff", shape: "pointed" },
         second: { visible: true, color: "#6d86ff", length: 0.71 }
       },
       indices: {
@@ -191,8 +191,8 @@ const stylePresets = [
     swatch: { accent: "#ff5a00", ring: "#111827", border: "#05070d", glow: "#ffe4d3" },
     state: {
       hands: {
-        hour: { visible: true, color: "#111827", length: 0.38, lumeVisible: false, lumeColor: "#f7efdb", pointedTip: false },
-        minute: { visible: true, color: "#f0c419", length: 0.7, lumeVisible: false, lumeColor: "#f7efdb", pointedTip: false },
+        hour: { visible: true, color: "#111827", length: 0.38, lumeVisible: false, lumeColor: "#f7efdb", shape: "rounded" },
+        minute: { visible: true, color: "#f0c419", length: 0.7, lumeVisible: false, lumeColor: "#f7efdb", shape: "rounded" },
         second: { visible: true, color: "#ff4a22", length: 0.74 }
       },
       indices: {
@@ -221,8 +221,8 @@ const stylePresets = [
     swatch: { accent: "#9fb18c", ring: "#445e39", border: "#243022", glow: "#e4eadc" },
     state: {
       hands: {
-        hour: { visible: true, color: "#242d22", length: 0.45, lumeVisible: true, lumeColor: "#d9e8a9", pointedTip: true },
-        minute: { visible: true, color: "#2d3829", length: 0.66, lumeVisible: true, lumeColor: "#d9e8a9", pointedTip: true },
+        hour: { visible: true, color: "#242d22", length: 0.45, lumeVisible: true, lumeColor: "#d9e8a9", shape: "pointed" },
+        minute: { visible: true, color: "#2d3829", length: 0.66, lumeVisible: true, lumeColor: "#d9e8a9", shape: "pointed" },
         second: { visible: true, color: "#c25a3d", length: 0.69 }
       },
       indices: {
@@ -251,8 +251,8 @@ const stylePresets = [
     swatch: { accent: "#5b4d7f", ring: "#fbfaf8", border: "#312744", glow: "#f1ebf7" },
     state: {
       hands: {
-        hour: { visible: true, color: "#2d233d", length: 0.42, lumeVisible: false, lumeColor: "#f8f1fd", pointedTip: true },
-        minute: { visible: true, color: "#3c2d52", length: 0.63, lumeVisible: false, lumeColor: "#f8f1fd", pointedTip: true },
+        hour: { visible: true, color: "#2d233d", length: 0.42, lumeVisible: false, lumeColor: "#f8f1fd", shape: "pointed" },
+        minute: { visible: true, color: "#3c2d52", length: 0.63, lumeVisible: false, lumeColor: "#f8f1fd", shape: "pointed" },
         second: { visible: true, color: "#9b7fd1", length: 0.68 }
       },
       indices: {
@@ -281,8 +281,8 @@ const stylePresets = [
     swatch: { accent: "#93f7ff", ring: "#0d1820", border: "#04070b", glow: "#dcfbff" },
     state: {
       hands: {
-        hour: { visible: true, color: "#d8fdff", length: 0.4, lumeVisible: false, lumeColor: "#b8fbff", pointedTip: false },
-        minute: { visible: true, color: "#8ef8ff", length: 0.72, lumeVisible: false, lumeColor: "#b8fbff", pointedTip: false },
+        hour: { visible: true, color: "#d8fdff", length: 0.4, lumeVisible: false, lumeColor: "#b8fbff", shape: "rounded" },
+        minute: { visible: true, color: "#8ef8ff", length: 0.72, lumeVisible: false, lumeColor: "#b8fbff", shape: "rounded" },
         second: { visible: true, color: "#00e7ff", length: 0.75 }
       },
       indices: {
@@ -315,7 +315,7 @@ const state = {
       length: 0.45,
       lumeVisible: false,
       lumeColor: "#f5f5f5",
-      pointedTip: false
+      shape: "rounded"
     },
     minute: {
       visible: true,
@@ -323,7 +323,7 @@ const state = {
       length: 0.65,
       lumeVisible: false,
       lumeColor: "#f5f5f5",
-      pointedTip: false
+      shape: "rounded"
     },
     second: {
       visible: true,
@@ -525,11 +525,12 @@ function setHandLume(handElement, handState) {
 }
 
 function setHandShape(handElement, handState) {
-  if (!handElement || typeof handState.pointedTip === "undefined") {
+  if (!handElement) {
     return;
   }
 
-  handElement.classList.toggle("clock-hand--pointed", Boolean(handState.pointedTip));
+  const handShape = handState.shape || (handState.pointedTip ? "pointed" : "rounded");
+  handElement.classList.toggle("clock-hand--pointed", handShape === "pointed");
 }
 
 function hexToRgb(hexColor) {
@@ -678,6 +679,11 @@ function updateControlsFromState() {
 
     const value = state.hands[handName][controlName];
 
+    if (control.type === "radio") {
+      control.checked = String(value) === control.value;
+      return;
+    }
+
     if (control.type === "checkbox") {
       control.checked = Boolean(value);
       return;
@@ -794,7 +800,9 @@ function handleHandControlChange(event) {
     return;
   }
 
-  if (control.type === "checkbox") {
+  if (control.type === "radio") {
+    state.hands[handName][controlName] = control.value;
+  } else if (control.type === "checkbox") {
     state.hands[handName][controlName] = control.checked;
   } else if (control.type === "range") {
     state.hands[handName][controlName] = Number(control.value);
